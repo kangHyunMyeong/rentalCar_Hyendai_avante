@@ -30,18 +30,18 @@ pnpm preview
 | Vercel | Framework Preset: Vite, Build Command: `pnpm build`, Output Directory: `dist` |
 | Cloudflare Pages | Framework Preset: Vite, Build Command: `pnpm build`, Build Output Directory: `dist` |
 
-Vercel의 Project Settings 또는 Cloudflare Pages의 Environment variables에 정식 도메인이 생기면 다음 값을 추가하세요.
+정식 도메인이 생기기 전에는 기준 주소가 `https://rental-car-hyendai-avante.vercel.app` 입니다. canonical, Open Graph, JSON-LD, sitemap이 이 주소를 사용합니다. 정식 도메인이 확정되면 환경 변수만 바꾸면 됩니다.
 
 ```env
 SITE_URL=https://www.your-domain.com
 ENABLE_INDEXING=true
 ```
 
-- **도메인이 없는 현재 상태에서는 `ENABLE_INDEXING=false`를 유지**하세요. 기본값도 비색인입니다.
-- 정식 도메인을 설정하기 전에는 canonical을 만들지 않으며, Vercel/Cloudflare가 빌드 환경에서 제공하는 미리보기 URL은 OG 이미지 주소에 사용될 수 있습니다.
-- `SITE_URL`만 설정해도 사이트가 색인되지 않습니다. `ENABLE_INDEXING=true`도 함께 필요합니다.
-- 색인 허용 시에만 `sitemap.xml`을 생성하며, `robots.txt`는 noindex 메타태그를 읽을 수 있도록 크롤링을 허용합니다.
-- Open Graph, Twitter Card, JSON-LD Organization / WebSite / WebPage / Service 정보와 1200×630 WebP 이미지를 포함합니다.
+- `SITE_URL`이 없으면 위의 임시 도메인을 사용하고, 기본값은 검색 색인 허용입니다.
+- `ENABLE_INDEXING=false`이면 canonical은 유지한 채 `noindex`로 바꿉니다.
+- Vercel 미리보기 배포(`VERCEL_ENV=preview`)는 배포별 주소가 색인되지 않도록 `noindex`이며, canonical은 기준 주소를 가리킵니다.
+- 색인 허용 시에만 `sitemap.xml`을 만들고, `robots.txt`는 크롤링을 허용한 뒤 sitemap을 안내합니다.
+- Open Graph, Twitter Card, JSON-LD Organization / WebSite / WebPage / Service / FAQPage와 1200×630 WebP 이미지를 포함합니다.
 - Facebook·카카오톡 등은 Open Graph를 사용합니다. 공식 SNS 계정이 없어 확인되지 않은 계정 링크는 기입하지 않았습니다.
 
 ### 검색엔진을 위한 HTML 사전 렌더링

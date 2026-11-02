@@ -44,7 +44,7 @@ const legalDocuments: Record<LegalId, { title: string; updated: string; sections
   },
 };
 
-const faqItems = [
+export const faqItems = [
   { question: "화면의 예상 월 렌트료가 최종 가격인가요?", answer: "아니요. 화면에 표시된 금액은 참고용 예상금액입니다. 실제 월 렌트료는 렌터사 요율, 보험 조건, 심사 결과 등에 따라 달라질 수 있습니다." },
   { question: "월 렌트료에 보험료와 자동차세가 포함되나요?", answer: "일반적인 장기렌트 상품에는 보험료와 자동차세가 포함되는 경우가 많습니다. 정확한 포함 항목과 보험 보장 범위는 계약 전에 확인해 주세요." },
   { question: "선납금과 보증금은 무엇이 다른가요?", answer: "선납금은 렌트료를 미리 내는 돈으로, 계약이 끝나도 돌려받지 않습니다. 보증금은 계약 조건에 따라 계약 종료 시 돌려받을 수 있는 돈입니다." },
@@ -405,7 +405,7 @@ export default function Home() {
                       <ChevronDown size={20} strokeWidth={1.5}/>
                     </button>
                   </h3>
-                  {openFaq === index && <div className="faq-answer" role="region" id={`faq-answer-${index}`} aria-labelledby={`faq-question-${index}`}><p>{item.answer}</p></div>}
+                  <div className="faq-answer" role="region" id={`faq-answer-${index}`} aria-labelledby={`faq-question-${index}`} hidden={openFaq !== index}><p>{item.answer}</p></div>
                 </div>
               ))}
             </div>
