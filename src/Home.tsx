@@ -217,9 +217,8 @@ export default function Home() {
 
   return (
     <main className="landing-shell">
-      <div className="landing-container">
-        <div className="landing-content">
           <header className={`fitcar-header ${scrolled ? "is-scrolled" : ""}`}>
+            <div className="section-inner">
             <button type="button" className="fitcar-logo" onClick={scrollToTop} aria-label="핏카 아반떼 상단 이동">
               <span className="logo-main">FITCAR<span className="logo-period">.</span></span>
               <span className="logo-sub">THE ALL-NEW AVANTE</span>
@@ -227,9 +226,11 @@ export default function Home() {
             <div className="header-buttons">
               <button type="button" className="header-cta" onClick={openConsultation}><span>무료 견적 상담</span><ArrowRight size={17} strokeWidth={1.8} /></button>
             </div>
+            </div>
           </header>
 
           <section className="hero-section" id="hero" aria-label="디 올 뉴 아반떼 장기렌트 메인 비주얼">
+            <div className="section-inner">
             <div className="hero-layout">
               <div className="hero-copy">
                 <h1>매일 타는 아반떼,<br/>장기렌트로<br/><em>편하게 시작하세요.</em></h1>
@@ -242,9 +243,11 @@ export default function Home() {
                 <img src="/avante/avante-04.webp" alt="건축적 공간 앞에 놓인 디 올 뉴 아반떼 차량" width={1280} height={540} fetchPriority="high" />
               </div>
             </div>
+            </div>
           </section>
 
           <section className="avante-features" id="features" aria-labelledby="features-title">
+            <div className="section-inner">
             <div className="features-heading scroll-reveal">
               <div>
                 <span className="explore-label">AVANTE FEATURES</span>
@@ -289,9 +292,11 @@ export default function Home() {
             <div className="features-bottom scroll-reveal">
               <p>※ 사진 속 기능은 트림 및 선택 옵션에 따라 다를 수 있습니다.</p>
             </div>
+            </div>
           </section>
 
           <section className="rental-estimate-section" id="estimate" aria-labelledby="rental-estimate-title">
+            <div className="section-inner">
             <div className="estimate-section-heading scroll-reveal">
               <span className="explore-label">COLOR &amp; RENTAL ESTIMATE</span>
               <h2 id="rental-estimate-title">내가 고른 아반떼,<br/><em>렌트료는 얼마일까요?</em></h2>
@@ -372,9 +377,11 @@ export default function Home() {
               </div>
             </div>
             <p className="rental-estimate-note">차량가는 현대자동차 2026년 10월 공식 가격표 기준입니다. 월 렌트료는 공개된 시장 견적을 참고한 <strong>참고용 예상금액</strong>으로, 계약기간·주행거리별 차액과 보증금 할인율에는 임시 가정이 포함됩니다. 렌터사 요율, 보험·정비 조건, 심사 및 프로모션에 따라 실제 금액은 달라집니다.</p>
+            </div>
           </section>
 
           <section className="rental-benefits-section" id="benefits" aria-labelledby="benefits-title">
+            <div className="section-inner">
             <div className="benefits-heading scroll-reveal">
               <span className="explore-label">LONG-TERM RENTAL BENEFITS</span>
               <h2 id="benefits-title">아반떼 장기렌트,<br/><em>어떤 점이 편할까요?</em></h2>
@@ -387,9 +394,11 @@ export default function Home() {
               <article className="benefit-row"><span className="benefit-number">04</span><div className="benefit-icon"><RotateCcw size={25} strokeWidth={1.5}/></div><div><h3>계약이 끝나면 인수 또는 반납</h3><p>상품에 따라 차를 계속 이용할지, 반납할지 선택할 수 있습니다.</p></div></article>
               <p className="benefits-note">※ 초기 비용, 보험 포함 범위, 만기 선택 가능 여부는 렌터사와 계약 조건에 따라 달라질 수 있습니다.</p>
             </div>
+            </div>
           </section>
 
           <section className="rental-faq-section" id="faq" aria-labelledby="faq-title">
+            <div className="section-inner">
             <div className="faq-heading scroll-reveal">
               <span className="explore-label">FREQUENTLY ASKED QUESTIONS</span>
               <h2 id="faq-title">계약 전에 궁금한 점,<br/><em>여기서 확인하세요.</em></h2>
@@ -409,19 +418,23 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            </div>
           </section>
 
           <section className="final-cta-section" id="consultation" aria-labelledby="final-cta-title">
             <img src="/avante/avante-02.webp" alt="어두운 배경 앞에 세워진 아반떼의 뒤쪽 디자인" loading="lazy" />
+            <div className="section-inner final-cta-frame">
             <div className="final-cta-copy">
               <span>AVANTE RENTAL · FREE CONSULTATION</span>
               <h2 id="final-cta-title">원하는 아반떼,<br/>내 조건으로 만나보세요.</h2>
               <p>마음에 드는 아반떼가 있으신가요?<br/>내게 맞는 조건을 편하게 알아보세요.</p>
               <button type="button" onClick={() => handleNavigation("컬러 · 견적")}>무료 견적 알아보기 <ArrowRight size={19} strokeWidth={1.8}/></button>
             </div>
+            </div>
           </section>
 
           <footer className="fitcar-footer" id="footer">
+            <div className="section-inner">
             <div className="fitcar-footer-top">
               <div className="footer-brand"><strong>FITCAR<span>.</span></strong><small>아반떼 장기렌트 · 핏카컴퍼니</small></div>
               <div className="footer-navigation"><button type="button" onClick={() => handleNavigation("컬러 · 견적")}>무료 견적 알아보기</button><button type="button" onClick={() => handleNavigation("FAQ")}>자주 묻는 질문</button><button type="button" onClick={openConsultation}>무료 견적 상담</button></div>
@@ -432,9 +445,8 @@ export default function Home() {
               <p className="footer-keywords">아반떼장기렌트 · 아반떼렌트가격 · 아반떼장기렌트상담 · 아반떼장기렌트견적 · 디올뉴아반떼장기렌트 · 아반떼장기렌트비용</p>
               <div className="footer-bottom"><span>© FitCar Company. All rights reserved.</span><span>차량 이미지 출처: 현대자동차 공식 홈페이지</span></div>
             </div>
+            </div>
           </footer>
-        </div>
-      </div>
 
       <dialog ref={consultDialogRef} data-lenis-prevent className="consult-dialog" aria-labelledby="consult-dialog-title" aria-describedby="consult-dialog-description" onClose={() => setConsultOpen(false)} onClick={(event) => { if (event.target === event.currentTarget) setConsultOpen(false); }}>
         <div className="consult-modal">
